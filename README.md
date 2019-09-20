@@ -18,7 +18,7 @@
 Install package from npm:
 
 ```node
-npm i vott-ct
+npm i powerai-ct
 ```
 
 The package structure:
