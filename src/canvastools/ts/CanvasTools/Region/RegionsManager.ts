@@ -149,6 +149,10 @@ export class RegionsManager {
      * @param tagsDescriptor - The tags descriptor object.
      */
     public addRegion(id: string, regionData: RegionData, tagsDescriptor: TagsDescriptor) {
+        // const startTime = new Date().valueOf(); // 开始时间
+        // const endTime = new Date().valueOf(); // 结束时间
+        // console.log(`加载: ${(endTime - startTime).toString()} 毫秒`);
+        let startTime = new Date().valueOf(); // 开始时间
         if (regionData.type === RegionDataType.Point) {
             this.addPointRegion(id, regionData, tagsDescriptor);
         } else if (regionData.type === RegionDataType.Polyline) {
@@ -158,8 +162,16 @@ export class RegionsManager {
         } else if (regionData.type === RegionDataType.Polygon) {
             this.addPolygonRegion(id, regionData, tagsDescriptor);
         }
-        this.sortRegionsByArea();
-        this.redrawAllRegions();
+        let endTime = new Date().valueOf(); // 结束时间
+        console.log(`画图去掉sortRegionsByArea 单个: ${(endTime - startTime).toString()} 毫秒`);
+        startTime = new Date().valueOf(); // 开始时间
+        // this.sortRegionsByArea();
+        endTime = new Date().valueOf(); // 结束时间
+        console.log(`画图去掉sortRegionsByArea sortRegionsByArea: ${(endTime - startTime).toString()} 毫秒`);
+        startTime = new Date().valueOf(); // 开始时间
+        // this.redrawAllRegions();
+        endTime = new Date().valueOf(); // 结束时间
+        console.log(`画图去掉sortRegionsByArea redrawAllRegions: ${(endTime - startTime).toString()} 毫秒`);
     }
 
     /**
