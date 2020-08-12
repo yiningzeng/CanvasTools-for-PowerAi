@@ -947,6 +947,9 @@ class DragComponent extends RegionComponent_1.RegionComponent {
                 event: "pointerenter",
                 base: this.dragNode.node,
                 listener: (e) => {
+                    if (e.button !== 0) {
+                        return;
+                    }
                     if (this.isDragged) {
                         e.stopPropagation();
                     }
@@ -957,6 +960,9 @@ class DragComponent extends RegionComponent_1.RegionComponent {
                 event: "pointermove",
                 base: this.dragNode.node,
                 listener: (e) => {
+                    if (e.button !== 0) {
+                        return;
+                    }
                     if (this.isDragged) {
                         const rect = e.target.getBoundingClientRect();
                         const rdx = e.clientX - rect.left;
@@ -992,6 +998,9 @@ class DragComponent extends RegionComponent_1.RegionComponent {
                 event: "pointerdown",
                 base: this.dragNode.node,
                 listener: (e) => {
+                    if (e.button !== 0) {
+                        return;
+                    }
                     this.dragNode.node.setPointerCapture(e.pointerId);
                     const multiselection = e.ctrlKey;
                     this.isDragged = true;
@@ -1005,6 +1014,9 @@ class DragComponent extends RegionComponent_1.RegionComponent {
                 event: "pointerup",
                 base: this.dragNode.node,
                 listener: (e) => {
+                    if (e.button !== 0) {
+                        return;
+                    }
                     this.dragNode.node.releasePointerCapture(e.pointerId);
                     const multiselection = e.ctrlKey;
                     if (this.isDragged) {
