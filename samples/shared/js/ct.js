@@ -1957,8 +1957,6 @@ class RegionsManager {
         else if (regionData.type === RegionData_1.RegionDataType.Polygon) {
             this.addPolygonRegion(id, regionData, tagsDescriptor);
         }
-        this.sortRegionsByArea();
-        this.redrawAllRegions();
     }
     addRectRegion(id, regionData, tagsDescriptor) {
         this.menu.hide();
@@ -2272,6 +2270,10 @@ class RegionsManager {
             }
         }
         else if (state === IRegionCallbacks_1.ChangeEventType.SELECTIONTOGGLE && !this.justManipulated) {
+            if (region.isSelected) {
+                this.menu.showOnRegion(region);
+                return;
+            }
             if (!region.isSelected) {
                 if (!multiSelection) {
                     this.unselectRegions(region);
