@@ -175,6 +175,7 @@ export class RectSelector extends Selector {
      * @param e PointerEvent
      */
     private onPointerDown(e: PointerEvent) {
+        if (e.button !== 0) { return; }
         window.requestAnimationFrame(() => {
             if (!this.isTwoPoints) {
                 this.capturingState = true;
@@ -198,6 +199,7 @@ export class RectSelector extends Selector {
      * @param e PointerEvent
      */
     private onPointerUp(e: PointerEvent) {
+        if (e.button !== 0) { return; }
         window.requestAnimationFrame(() => {
             const rect = this.parentNode.getClientRects();
             const p = new Point2D(e.clientX - rect[0].left, e.clientY - rect[0].top);

@@ -5989,6 +5989,9 @@ class RectSelector extends Selector_1.Selector {
         });
     }
     onPointerDown(e) {
+        if (e.button !== 0) {
+            return;
+        }
         window.requestAnimationFrame(() => {
             if (!this.isTwoPoints) {
                 this.capturingState = true;
@@ -6004,6 +6007,9 @@ class RectSelector extends Selector_1.Selector {
         });
     }
     onPointerUp(e) {
+        if (e.button !== 0) {
+            return;
+        }
         window.requestAnimationFrame(() => {
             const rect = this.parentNode.getClientRects();
             const p = new Point2D_1.Point2D(e.clientX - rect[0].left, e.clientY - rect[0].top);
