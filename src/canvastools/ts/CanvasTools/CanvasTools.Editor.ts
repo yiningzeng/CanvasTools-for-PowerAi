@@ -434,7 +434,7 @@ export class Editor {
         this.editorDiv = container;
 
         this.editorDiv.classList.add("CanvasToolsEditor");
-        this.editorDiv.append(this.contentCanvas);
+        // this.editorDiv.append(this.contentCanvas);
         this.editorDiv.append(this.editorSVG);
 
         // automatically resize internals on window resize

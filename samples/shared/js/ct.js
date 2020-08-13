@@ -6242,7 +6242,6 @@ class Editor {
         this.editorSVG = this.createSVGElement();
         this.editorDiv = container;
         this.editorDiv.classList.add("CanvasToolsEditor");
-        this.editorDiv.append(this.contentCanvas);
         this.editorDiv.append(this.editorSVG);
         window.addEventListener("resize", (e) => {
             if (this.autoResize) {
