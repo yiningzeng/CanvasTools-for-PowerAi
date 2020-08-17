@@ -68,7 +68,7 @@ export abstract class DragComponent extends RegionComponent {
                 event: "pointermove",
                 base: this.dragNode.node,
                 listener: (e: PointerEvent) => {
-                    if (e.button !== 0) { return; }
+                    if (e.pointerType !== "mouse" && e.buttons !== 1) { return; }
                     if (this.isDragged) {
                         const rect = (e.target as HTMLElement).getBoundingClientRect();
                         const rdx = e.clientX - rect.left;

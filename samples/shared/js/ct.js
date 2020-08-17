@@ -960,7 +960,7 @@ class DragComponent extends RegionComponent_1.RegionComponent {
                 event: "pointermove",
                 base: this.dragNode.node,
                 listener: (e) => {
-                    if (e.button !== 0) {
+                    if (e.pointerType !== "mouse" && e.buttons !== 1) {
                         return;
                     }
                     if (this.isDragged) {
