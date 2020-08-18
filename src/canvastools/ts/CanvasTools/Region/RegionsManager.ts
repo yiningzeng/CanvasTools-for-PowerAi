@@ -76,6 +76,7 @@ export class RegionsManager {
      * Returns current freezing state.
      */
     public get isFrozen(): boolean {
+        return false;
         return this.isFrozenState;
     }
 
@@ -376,40 +377,40 @@ export class RegionsManager {
      */
     public freeze(nuance?: string) {
         this.regionManagerLayer.addClass("frozen");
-        if (nuance !== undefined) {
-            this.regionManagerLayer.addClass(nuance);
-            this.frozenNuance = nuance;
-        } else {
-            this.frozenNuance = "";
-        }
-        this.menu.hide();
-        this.regions.forEach((region) => {
-            region.freeze();
-        });
-
-        this.isFrozenState = true;
+        // if (nuance !== undefined) {
+        //     this.regionManagerLayer.addClass(nuance);
+        //     this.frozenNuance = nuance;
+        // } else {
+        //     this.frozenNuance = "";
+        // }
+        // this.menu.hide();
+        // this.regions.forEach((region) => {
+        //     region.freeze();
+        // });
+        //
+        // this.isFrozenState = true;
     }
 
     /**
      * Unfreezes the manager and all its regions.
      */
     public unfreeze() {
-        this.regionManagerLayer.removeClass("frozen");
-        if (this.frozenNuance !== "") {
-            this.regionManagerLayer.removeClass(this.frozenNuance);
-        }
-
-        const selectedRegions = this.lookupSelectedRegions();
-
-        if (selectedRegions.length > 0) {
-            this.menu.showOnRegion(selectedRegions[0]);
-        }
-
-        this.regions.forEach((region) => {
-            region.unfreeze();
-        });
-
-        this.isFrozenState = false;
+        // this.regionManagerLayer.removeClass("frozen");
+        // if (this.frozenNuance !== "") {
+        //     this.regionManagerLayer.removeClass(this.frozenNuance);
+        // }
+        //
+        // const selectedRegions = this.lookupSelectedRegions();
+        //
+        // if (selectedRegions.length > 0) {
+        //     this.menu.showOnRegion(selectedRegions[0]);
+        // }
+        //
+        // this.regions.forEach((region) => {
+        //     region.unfreeze();
+        // });
+        //
+        // this.isFrozenState = false;
     }
 
     /**
