@@ -345,7 +345,7 @@ svg:not(:root) .menuLayer {
 .regionManager.frozen .regionStyle.old .anchorStyle.BR, 
 .regionManager.frozen .regionStyle.old .anchorStyle.TR, 
 .regionManager.frozen .regionStyle.old .anchorStyle.BL {
-    cursor: default; 
+    cursor: default;
 }
 
 .regionManager.frozen .anchorStyle.ghost {

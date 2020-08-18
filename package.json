@@ -1,6 +1,6 @@
 {
   "name": "powerai-ct",
-  "version": "2.3.9",
+  "version": "2.4.4",
   "description": "CanvasTools editor for the power-ai project! Fork from https://github.com/microsoft/CanvasTools-for-VOTT",
   "main": "./lib/js/ct.js",
   "types": "./lib/js/ct.d.ts",
